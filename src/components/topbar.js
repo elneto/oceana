@@ -1,15 +1,23 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
+import { IconContext } from "react-icons"
+import { FaHome } from "react-icons/fa"
 
 const Topbar = () => (
   <div id="top-bar">
     <Container>
       <Row>
         <Col className="top-links home-link">
-          <ul>
-            <li className="full-icon">
-              <a href="/en">
-                <i className="icon-home2"></i> Welcome to the United Nations
+          <ul style={{ listStyle: "none" }}>
+            <li style={{ top: "2px" }}>
+              <a href="//www.un.org/">
+                <IconContext.Provider
+                  value={{ size: "16px", className: "home-icon" }}
+                >
+                  <div>
+                    <FaHome /> Welcome to the United Nations
+                  </div>
+                </IconContext.Provider>
               </a>
             </li>
           </ul>
