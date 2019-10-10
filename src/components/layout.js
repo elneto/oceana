@@ -12,6 +12,7 @@ import { Container, Row, Col } from "react-bootstrap"
 
 import Header from "./header"
 import Navbar from "./navBar"
+import Topbar from "./topbar"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -26,6 +27,7 @@ const Layout = ({ children, pageInfo }) => (
     `}
     render={data => (
       <>
+        <Topbar></Topbar>
         <Container fluid className="px-0 main">
           <Row noGutters className="justify-content-center">
             <Col>

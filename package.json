@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-react-bootstrap",
+  "name": "oceana",
   "private": true,
-  "description": "A starter that includes and configures react-bootstrap and react-icons, along with SASS handling. ",
+  "description": "Based on gatsby-starter-react-bootstrap by Billy Jacoby <billyjacoby@gmail.com>",
   "version": "0.1.0",
-  "author": "Billy Jacoby <billyjacoby@gmail.com>",
+  "author": "Ernesto Araiza <ernestoaraiza@protonmail.com>",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gatsby": "^2.3.34",
