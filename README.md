@@ -1,6 +1,6 @@
-# Gatsby React Bootstrap Starter
+# The Ocean Conference 2020 website in Gatsbyjs
 
-A GatsbyJS starter that includes
+Based on gatsby-react-bootstrap-starter so it includes
 
 - react-bootstrap
 - react-icons
