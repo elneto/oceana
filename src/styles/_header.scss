@@ -2,4 +2,10 @@ header {
     h1 a {
         color: $dark-gray;
     }
+
+    img#logo {
+        width: 70px;
+        margin-right: 0.5em;
+        display: inline-block;
+    }
 }
