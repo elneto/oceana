@@ -28,13 +28,10 @@ const Header = ({ siteTitle }) => (
     </div>
   </header>
 )
-
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
-
 Header.defaultProps = {
   siteTitle: ``,
 }
-
 export default Header
