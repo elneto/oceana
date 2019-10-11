@@ -1,11 +1,14 @@
 header {
-    h1 a {
-        color: $dark-gray;
-    }
-
-    img#logo {
-        width: 70px;
-        margin-right: 0.5em;
-        display: inline-block;
-    }
+  #site-title a {
+    font-family: $myfont-family-headings;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: $dark-gray;
+  }
+  img#logo {
+    width: 70px;
+    margin-right: 0.5em;
+    display: inline-block;
+    padding-top: 0.4em;
+  }
 }

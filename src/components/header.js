@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import logo from "../images/un-emblem.svg"
-
 const Header = ({ siteTitle }) => (
   <header
     style={{
@@ -11,10 +10,10 @@ const Header = ({ siteTitle }) => (
   >
     <div
       style={{
-        padding: `1.45rem 0`,
+        padding: `0.6rem 0`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <div style={{ margin: 0 }} id="site-title">
         <Link
           to="/"
           style={{
@@ -24,7 +23,7 @@ const Header = ({ siteTitle }) => (
           <img id="logo" src={logo} alt="Emblem of the United Nations" />
           {siteTitle}
         </Link>
-      </h1>
+      </div>
     </div>
   </header>
 )
