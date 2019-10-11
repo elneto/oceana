@@ -26,13 +26,16 @@ const Layout = ({ children, pageInfo }) => (
     `}
     render={data => (
       <>
-        <Topbar></Topbar>
-        <Container fluid className="px-0 main">
-          <Row noGutters className="justify-content-center">
+        <Topbar />
+        <Container>
+          <Row>
             <Col>
               <Header siteTitle={data.site.siteMetadata.title} />
             </Col>
           </Row>
+        </Container>
+
+        <Container fluid className="px-0 main">
           <Navbar pageInfo={pageInfo} />
           <Row noGutters>
             <Col>

@@ -7,8 +7,8 @@ const Topbar = () => (
   <div id="top-bar">
     <Container>
       <Row>
-        <Col className="top-links home-link">
-          <ul style={{ listStyle: "none" }}>
+        <Col>
+          <ul style={{ listStyle: "none", padding: 0 }}>
             <li style={{ top: "2px" }}>
               <a href="//www.un.org/">
                 <IconContext.Provider
