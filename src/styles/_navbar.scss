@@ -1,7 +1,21 @@
 #site-navbar {
-  background-color: $color-primary;
+  background-color: $light-gray;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
+  a {
+    font-family: $myfont-family-headings;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .nav-link {
+    color: $menu-gray;
+    padding-right: 1.7em;
+    &.active {
+      color: $unblue;
+    }
+  }
 }
