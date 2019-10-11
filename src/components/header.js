@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
 
 const Header = ({ siteTitle }) => (
   <header
