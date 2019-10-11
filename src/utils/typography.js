@@ -9,7 +9,7 @@ const typography = new Typography({
     "Arial",
     "sans-serif",
   ],
+  headerWeight: "700",
   bodyFontFamily: ["Roboto", "Arial", "Helvetica", "Arial", "sans-serif"],
 })
-
 export default typography
