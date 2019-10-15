@@ -1,15 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap"
+import { Navbar, Nav, Container } from "react-bootstrap"
 const CustomNavbar = ({ pageInfo }) => {
   //console.log(pageInfo)
   return (
