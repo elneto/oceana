@@ -1,10 +1,10 @@
 import React from "react"
 import { Row, Col, Container, ListGroup } from "react-bootstrap"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout pageInfo={{ pageName: "index" }}>
     <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
     <Container className="text-center">
@@ -14,6 +14,7 @@ const IndexPage = () => (
             This is a Gatsby Starter that I frequently use to get jump started
             on quick website builds. It includes the following packages:
           </p>
+          {console.log(data)}
         </Col>
       </Row>
       <Row className="justify-content-center my-3">
@@ -66,5 +67,32 @@ const IndexPage = () => (
     </Container>
   </Layout>
 )
+
+export const query = graphql`
+  {
+    allEntitySubqueueHomepage {
+      edges {
+        node {
+          relationships {
+            items {
+              title
+              body {
+                value
+              }
+              children {
+                ... on ImageSharp {
+                  id
+                  resolutions {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
