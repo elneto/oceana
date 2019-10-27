@@ -79,11 +79,14 @@ export const query = graphql`
               body {
                 value
               }
-              children {
-                ... on ImageSharp {
-                  id
-                  resolutions {
-                    src
+              relationships {
+                field_image {
+                  localFile {
+                    childImageSharp {
+                      fluid {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
                   }
                 }
               }
