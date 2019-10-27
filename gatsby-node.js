@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allEntitySubqueuePages.edges[0].node.relationships.items.map(
     ({ id, path }) => {
-      console.log(id, path.alias)
+      //console.log(id, path.alias)
       createPage({
         path: path.alias,
         component: patho.resolve(`./src/templates/page.js`),

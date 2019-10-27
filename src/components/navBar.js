@@ -1,8 +1,26 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Navbar, Nav, Container } from "react-bootstrap"
 const CustomNavbar = ({ pageInfo }) => {
   //console.log(pageInfo)
+  const data = useStaticQuery(graphql`
+    query MyPagesQuery {
+      allEntitySubqueuePages {
+        edges {
+          node {
+            relationships {
+              items {
+                title
+                path {
+                  alias
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <>
       <Navbar variant="light" expand="lg" id="site-navbar">
@@ -15,31 +33,15 @@ const CustomNavbar = ({ pageInfo }) => {
                   Home
                 </Nav.Link>
               </Link>
-              <Link to="/page-2" className="link-no-style">
-                <Nav.Link as="span" eventKey="page-2">
-                  About
-                </Nav.Link>
-              </Link>
-              <Link to="/page-2" className="link-no-style">
-                <Nav.Link as="span" eventKey="page-2">
-                  Programme
-                </Nav.Link>
-              </Link>
-              <Link to="/page-2" className="link-no-style">
-                <Nav.Link as="span" eventKey="page-2">
-                  Documentation
-                </Nav.Link>
-              </Link>
-              <Link to="/page-2" className="link-no-style">
-                <Nav.Link as="span" eventKey="page-2">
-                  Participate
-                </Nav.Link>
-              </Link>
-              <Link to="/page-2" className="link-no-style">
-                <Nav.Link as="span" eventKey="page-2">
-                  News & Media
-                </Nav.Link>
-              </Link>
+              {data.allEntitySubqueuePages.edges[0].node.relationships.items.map(
+                ({ title, path }) => (
+                  <Link to={path.alias} className="link-no-style">
+                    <Nav.Link as="span" eventKey={title}>
+                      {title}
+                    </Nav.Link>
+                  </Link>
+                )
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
