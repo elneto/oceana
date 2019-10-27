@@ -6,10 +6,11 @@ import SEO from "../components/seo"
 
 const Page = ({ data }) => {
   const page = data.allNodePage.edges[0].node
+  //console.log(page.title)
   return (
     <Layout pageInfo={{ pageName: page.title }}>
       <SEO title={page.title} />
-      <Container class="mt-5">
+      <Container className="mt-5">
         <h1>{page.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: page.body.value }} />
         <Link to="/">Go back to the homepage</Link>
