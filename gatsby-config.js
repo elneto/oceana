@@ -38,7 +38,7 @@ module.exports = {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: `http://sdgkp.un.org/`,
-        // apiBase: `api`, // optional, defaults to `jsonapi`
+        //apiBase: `api`, // optional, defaults to `jsonapi`
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
