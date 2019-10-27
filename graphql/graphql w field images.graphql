@@ -1,0 +1,41 @@
+query MyQuery {
+  allEntitySubqueueHomepage {
+    edges {
+      node {
+        relationships {
+          items {
+            title
+            body {
+              value
+            }
+            relationships {
+              field_image_media {
+                field_credit
+                relationships {
+                  field_media_image {
+                    localFile {
+                      childImageSharp {
+                        fluid {
+                          src
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              field_image {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
