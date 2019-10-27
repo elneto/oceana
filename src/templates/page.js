@@ -4,15 +4,34 @@ import { Container } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Page = () => (
-  <Layout pageInfo={{ pageName: "page-2" }}>
-    <SEO title="Page two" />
-    <Container class="mt-5">
-      <h1>Hi from the second page</h1>
-      <p>Welcome to page 2</p>
-      <Link to="/">Go back to the homepage</Link>
-    </Container>
-  </Layout>
-)
+const Page = ({ data }) => {
+  const page = data.allNodePage.edges[0].node
+  return (
+    <Layout pageInfo={{ pageName: page.title }}>
+      <SEO title={page.title} />
+      <Container class="mt-5">
+        <h1>{page.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: page.body.value }} />
+        <Link to="/">Go back to the homepage</Link>
+      </Container>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query MyQuery($id: String!) {
+    allNodePage(filter: { id: { eq: $id } }) {
+      edges {
+        node {
+          id
+          title
+          body {
+            value
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Page
